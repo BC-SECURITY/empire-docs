@@ -1,7 +1,5 @@
 # Empire
 
-
-
 ![](https://user-images.githubusercontent.com/20302208/70022749-1ad2b080-154a-11ea-9d8c-1b42632fd9f9.jpg)
 
 ![GitHub Release](https://img.shields.io/github/v/release/BC-SECURITY/Empire) ![GitHub contributors](https://img.shields.io/github/contributors/BC-SECURITY/Empire) ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/BC-SECURITY/Empire) ![GitHub stars](https://img.shields.io/github/stars/BC-SECURITY/Empire) ![GitHub](https://img.shields.io/github/license/BC-Security/Empire) [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/fold_left.svg?style=flat)](https://twitter.com/BCSecurity1)
@@ -18,11 +16,9 @@ Thank you to the original team of developers: [@harmj0y](https://twitter.com/har
 
 Please reach out to us on our [Discord](https://discord.gg/P8PZPyf) if you have any questions or talk about offensive security.
 
-### Help us Improve!
+## Help us Improve!
 
 This documentation was organized and built by the PowerShell Empire development team. It is neither complete nor perfect, so any suggestions, corrections, or additions from the community would be greatly appreciated. Please submit any changes as a pull request to the [empire-docs repository](https://github.com/BC-SECURITY/empire-docs).
 
 Contact us by email at Empire@BC-Security.org
-
-Test github sync
 
