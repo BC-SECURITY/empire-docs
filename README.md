@@ -20,7 +20,7 @@ Please reach out to us on our [Discord](https://discord.gg/P8PZPyf) if you have 
 
 ### Help us Improve!
 
-This documentation was organized and built by the PowerShell Empire development team. It is neither complete nor perfect, so any suggestions, corrections, or additions from the community would be greatly appreciated. Please submit any Wiki changes as [Empire Pull Requests](https://github.com/BC-SECURITY/Empire/pulls) using the [Wiki directory](wiki).
+This documentation was organized and built by the PowerShell Empire development team. It is neither complete nor perfect, so any suggestions, corrections, or additions from the community would be greatly appreciated. Please submit any changes as a pull request to the [empire-docs repository](https://github.com/BC-SECURITY/empire-docs).
 
-Contact us by email at Empire@BC-Security.org with any drafted wiki pages or suggested modifications.
+Contact us by email at Empire@BC-Security.org
 
