@@ -23,7 +23,7 @@
   * [Starkiller](interfaces/starkiller.md)
 * [Plugins](plugins/README.md)
   * [Hooks and Filters](plugins/hooks-and-filters.md)
-* [C\#](c.md)
+* [C\#](csharp.md)
 * [Module Development](module-development.md)
 * [Release Notes](release-notes.md)
 
