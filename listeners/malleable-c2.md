@@ -43,7 +43,7 @@ Seems simple enough, right? But a peek behind the curtain will give some insight
 
 One of the areas that still needs some improvement is when the listener tries to ingest serialized profiles. Occasionally Empire will successfully start the listener, but the agent will fail to properly stage when using a launcher. We are always trying to improve Empire functionality, so please [submit any issues](https://github.com/BC-SECURITY/Empire/issues) to our Github, since we heavily rely on users to help us identify areas for improvement.
 
-We have also set up a [repository](http://[https://github.com/BC-SECURITY/Malleable-C2-Profiles) for working profiles, which we will continue to update as new threat profiles are generated. This is also an opportunity for everyone to submit and share their profiles \(assuming they work with Empire\).
+We have also set up a [repository](https://github.com/BC-SECURITY/Malleable-C2-Profiles) for working profiles, which we will continue to update as new threat profiles are generated. This is also an opportunity for everyone to submit and share their profiles \(assuming they work with Empire\).
 
 ![Code excerpt from http\_malleable.py](https://i1.wp.com/www.bc-security.org/wp-content/uploads/2020/09/Screenshot_2020-09-06_21-15-26.png?resize=944%2C523&ssl=1)
 
