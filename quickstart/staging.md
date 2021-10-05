@@ -8,5 +8,4 @@ This stager generates a randomized RSA private/public key pair in memory, uses t
 
 The agent decrypts the values, gathers basic system information, and posts this information to the server encrypted with the new AES session key to **STAGE2\_URI**. The server then returns the patched **./data/agent.ps1**, which can be thought of as the standard API. From here, the agent starts its beaconing behavior.
 
-\[\[[https://github.com/EmpireProject/Empire/wiki/Images/empire\_staging\_process.png\|align=center](https://github.com/EmpireProject/Empire/wiki/Images/empire_staging_process.png|align=center)\]\]
-
+![Graph depicting key staging process](https://raw.githubusercontent.com/wiki/EmpireProject/Empire/Images/empire_staging_process.png)

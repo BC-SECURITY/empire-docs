@@ -6,9 +6,9 @@ Modules in Empire 4 are driven by a yaml configuration per module. In most cases
 
 ## PowerShell
 
-The [powershell\_template.yaml](../empire/server/modules/powershell_template.yaml) will help guide through the fields needed for writing a simple module. Of course, not every module will fit the simplest case. There are advanced options that we will discuss below.
+The [powershell\_template.yaml](https://github.com/BC-SECURITY/Empire/blob/master/empire/server/modules/powershell_template.py) will help guide through the fields needed for writing a simple module. Of course, not every module will fit the simplest case. There are advanced options that we will discuss below.
 
-The property `options` is a list of the options that can be set for the module at execution time. All modules must contain an option called **Agent**. Additional options go in the options list after the **Agent** argument. If the argument is required for execution, set `required: true`, and if a default value is warranted, set `value`. The [prompt module](../empire/server/modules/powershell/collection/prompt.yaml) has an example of this.
+The property `options` is a list of the options that can be set for the module at execution time. All modules must contain an option called **Agent**. Additional options go in the options list after the **Agent** argument. If the argument is required for execution, set `required: true`, and if a default value is warranted, set `value`. The [prompt module](https://github.com/BC-SECURITY/Empire/blob/master/empire/server/modules/powershell/collection/prompt.yaml) has an example of this.
 
 When Empire boots up, it loads all module yamls found in the modules directory. If there are any missing fields or misconfigurations, the module won't load and a warning will print to the console.
 
@@ -29,7 +29,7 @@ script: |
 script_path: 'empire/server/data/module_source/credentials/Invoke-Mimikatz.ps1'
 ```
 
-The above example comes from the [logonpasswords module.](../empire/server/modules/powershell/credentials/mimikatz/logonpasswords.yaml)
+The above example comes from the [logonpasswords module.](https://github.com/BC-SECURITY/Empire/blob/master/empire/server/modules/powershell/credentials/mimikatz/logonpasswords.yaml)
 
 **script\_end:** In most cases the `script_end` will simply be a call to to the powershell function with a mustache template variable called `$PARAMS`. `{{ PARAMS }}` is where Empire will insert the formatted options.
 
@@ -37,7 +37,7 @@ The above example comes from the [logonpasswords module.](../empire/server/modul
 script_end: Invoke-Function {{ PARAMS }}
 ```
 
-There are functions that require the script\_end to be customized a bit further. For example: the one found in [Invoke-Kerberoast](../empire/server/modules/powershell/credentials/invoke_kerberoast.yaml)
+There are functions that require the script\_end to be customized a bit further. For example: the one found in [Invoke-Kerberoast](https://github.com/BC-SECURITY/Empire/blob/master/empire/server/modules/powershell/credentials/invoke_kerberoast.yaml)
 
 ```yaml
 script_end: Invoke-Kerberoast {{ PARAMS }} | fl | {{ OUTPUT_FUNCTION }} | %{$_ + "`n"};"`nInvoke-Kerberoast completed!
@@ -73,9 +73,9 @@ class Module(object):
 
 Examples of modules that use this custom generate function:
 
-* [bypassuac\_eventvwr](../empire/server/modules/powershell/privesc/bypassuac_eventvwr.py)
-* [invoke\_assembly](../empire/server/modules/powershell/code_execution/invoke_assembly.py)
-* [seatbelt](../empire/server/modules/powershell/situational_awareness/host/seatbelt.py)
+* [bypassuac\_eventvwr](https://github.com/BC-SECURITY/Empire/blob/master/empire/server/modules/powershell/privesc/bypassuac_eventvwr.py)
+* [invoke\_assembly](https://github.com/BC-SECURITY/Empire/blob/master/empire/server/modules/powershell/code_execution/invoke_assembly.py)
+* [seatbelt](https://github.com/BC-SECURITY/Empire/blob/master/empire/server/modules/powershell/situational_awareness/host/seatbelt.py)
 
 If an error occurs during the execution of the generate function, return the error message using `handle_error_message`, which will ensure that the client receives the error message in the REST response.
 
@@ -83,7 +83,7 @@ If an error occurs during the execution of the generate function, return the err
 
 **option\_format\_string\_boolean:** This tells Empire how to format boolean parameters when `True`. In most cases, the default format string will be fine: `-{{ KEY }}`.
 
-[Rubeus](../empire/server/modules/powershell/credentials/rubeus.yaml) is an example of a module that overwrites the option\_format\_string, since it only has one parameter `Command` and deviates from the default:
+[Rubeus](https://github.com/BC-SECURITY/Empire/blob/master/empire/server/modules/powershell/credentials/rubeus.yaml) is an example of a module that overwrites the option\_format\_string, since it only has one parameter `Command` and deviates from the default:
 
 ```yaml
 options:
@@ -102,7 +102,7 @@ advanced:
   option_format_string_boolean: ""
 ```
 
-**name\_in\_code**: There may be times when you want the display name for an option in Starkiller/CLI to be different from how it looks in the module's code. For this, you can use `name_in_code` such as in the [sharpsecdump module](../empire/server/modules/powershell/credentials/sharpsecdump.yaml)
+**name\_in\_code**: There may be times when you want the display name for an option in Starkiller/CLI to be different from how it looks in the module's code. For this, you can use `name_in_code` such as in the [sharpsecdump module](https://github.com/BC-SECURITY/Empire/blob/master/empire/server/modules/powershell/credentials/sharpsecdump.yaml)
 
 ```yaml
   - name: Username
@@ -123,14 +123,14 @@ advanced:
 
 **OUTPUT\_FUNCTION**: Some Powershell modules have an option named `OutputFunction` that converts the output to json, xml, etc. The `OutputFunction` option can be inserted anywher in the `script` and `script_end` by using `{{ OUTPUT_FUNCTION }}`.
 
-* An example of this in a yaml can be seen in [sherlock](../empire/server/modules/powershell/privesc/sherlock.yaml).
+* An example of this in a yaml can be seen in [sherlock](https://github.com/BC-SECURITY/Empire/blob/master/empire/server/modules/powershell/privesc/sherlock.yaml).
 * If a module uses a `custom_generate` function, it needs to perform this substitution on its own.
 
 ## Python
 
 Python modules are not much different from Powershell modules in terms of the yaml schema. The differences for Python come in with the `script`, `script_path`, `script_end`, and option formatters.
 
-A python script doesn't have an `option_format_string`. Instead, options are injected into the script directly using mustache templating. An example of this is the python module [say](../empire/server/modules/python/trollsploit/osx/say.yaml)
+A python script doesn't have an `option_format_string`. Instead, options are injected into the script directly using mustache templating. An example of this is the python module [say](https://github.com/BC-SECURITY/Empire/blob/master/empire/server/modules/python/trollsploit/osx/say.yaml)
 
 ```yaml
 options:

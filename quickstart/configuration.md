@@ -4,7 +4,7 @@ The Empire Client and Empire Server both have a config.yaml file to customize be
 
 ### Server
 
-The Server configuration is managed via [empire/server/config.yaml](../empire/server/config.yaml).
+The Server configuration is managed via [empire/server/config.yaml](https://github.com/BC-SECURITY/Empire/blob/master/empire/client/config.yaml).
 
 * **suppress-self-cert-warning** - Suppress the http warnings when launching an Empire instance that uses a self-signed cert
 * **database** - Configure Empire's database. Empire defaults to SQLite and has the ability to run with MySQL.
@@ -58,7 +58,7 @@ database:
 
 ### Client
 
-The Client configuration is managed via [empire/client/config.yaml](../empire/client/config.yaml).
+The Client configuration is managed via [empire/client/config.yaml](https://github.com/BC-SECURITY/Empire/blob/master/empire/client/config.yaml).
 
 * **servers** - The servers block is meant to give the user the ability to set up frequently used Empire servers.
 
@@ -80,7 +80,7 @@ The Client configuration is managed via [empire/client/config.yaml](../empire/cl
 * **suppress-self-cert-warning** - Suppress the HTTP warnings when connecting to an Empire instance that uses a self-signed cert.
 * **shortcuts** - Shortcuts defined here allow the user to define their own frequently used modules and assign a command to them.
 
-Let's look at 3 distinct examples. All of which can be found in the default [config.yaml](../empire/client/config.yaml)
+Let's look at 3 distinct examples. All of which can be found in the default [config.yaml](https://github.com/BC-SECURITY/Empire/blob/master/empire/client/config.yaml)
 
 ```yaml
 shortcuts:

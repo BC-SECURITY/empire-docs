@@ -4,7 +4,7 @@
 
 ## Starkiller
 
-Starkiller is a Frontend for [Powershell Empire](https://github.com/BC-SECURITY/Empire/). It is an Electron application written in VueJS. If you'd like to contribute please follow the [Contribution guide](/CONTRIBUTING.md). If you'd like to request a feature or report a bug, please follow the [Issue template](/.github/ISSUE_TEMPLATE.md).
+Starkiller is a Frontend for [Powershell Empire](https://github.com/BC-SECURITY/Empire/). It is an Electron application written in VueJS. If you'd like to contribute please follow the [Contribution guide](https://github.com/BC-SECURITY/Empire/blob/master/.github/CONTRIBUTING.md). If you'd like to request a feature or report a bug, please follow the [Issue template](https://github.com/BC-SECURITY/Empire/blob/master/.github/ISSUE_TEMPLATE.md).
 
 ## Getting Started
 
