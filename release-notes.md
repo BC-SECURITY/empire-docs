@@ -1,6 +1,60 @@
 # Release Notes
 
-```text
+```
+11/1/2021
+------------
+- Version 4.2.0 Master Release
+        - Added revershell & cmd launchers with reversehell (@Cx01N)
+        - Added ironpython to compile through empire with embedded std lib (@Cx01N)
+        - Added proxy (SOCKS/TOR/HTTP) pivots to python agents (@Cx01N)
+        - Added notifications in bottom toolbar for plugins and agents (@Cx01N)
+        - Added C# VNC server (@Cx01N)
+        - Added extended rights for certificate templates (@daem0nc0re)
+        - Added donut for shellcode generation (@Cx01N)
+        - Updated WMI persistence and bug fixes (@janit0rjoe)
+        - Updated covenant compiler (@Hubbl3)
+        - Updated csharp powershell launcher to compile through empire (@Hubbl3)
+        - Fixed formatting error in enable_rdp (@jamarir)
+        - Fixed nim launcher to run internal to exe (@Cx01N)
+        - Fixed misc python module errors (@Cx01N)
+        - Fixed outfile message displaying wrong directory (@Cx01N)
+        - Removed sRDI for shellcode (@Cx01N)
+
+9/28/2021
+------------
+- Version 4.1.3 Master Release
+        - Fixed output from files throwing a error for the client (@Cx01N)
+
+9/21/2021
+------------
+- Version 4.1.2 Master Release
+        - Removed pyminifier as a dependency to prevent install errors (@Cx01N)
+
+9/20/2021
+------------
+- Version 4.1.1 Master Release
+        - Add OutputFunction to dcsync_hashdump (@jamarir)
+        - Convert file operations to use with syntax (@jamarir)
+        - Added Invoke-IronPython3 and some OffensiveDLR fixes (@Cx01N)
+        - Fix for (#476) - String indices error  ms16-032 & ms16-135 (@Cx01N)
+        - Fix help menu text on the interact menu (@archcloudlabs)
+        - Rework agent taskings in the client to not poll for a result (@Cx01N)
+        - Added Python agents to the external/generate_agent module (@Cx01N)
+        - Update add_sid_history module command (@ilanisme)
+
+8/29/2021
+------------
+- Version 4.1.0 Master Release
+        - Correct issue where install script would break depending on the current working directory (@Vinnybod)
+        - Empire client now currently refreshes listener list after killing a listener (@Vinnybod)
+        - Removed the wiki and added a link to the new docs (@Vinnybod)
+        - Added the initial filtering/hooking feature (@Vinnybod)
+        - Fix an issue where the docker builds would not run because it was deleting the database (@Vinnybod)
+        - Added autocomplete for taskings in the Empire Client and added a command to view a specific task (@Cx01N)
+        - Updated the OutputFunction feature to allow for arbitrary values (@Vinnybod)
+        - Added an IronPython3 agent (@Cx01N)
+
+
 8/16/2021
 ------------
 - Version 4.0.2 Master Release
@@ -1095,4 +1149,3 @@ please contact us at info@bc-security.org
 -Initial release. All components released
 -Commited path fix to correct bug in certain modules
 ```
-
