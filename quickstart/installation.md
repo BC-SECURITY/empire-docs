@@ -50,7 +50,6 @@ To install and run:
 git clone --recursive https://github.com/BC-SECURITY/Empire.git
 cd Empire
 sudo ./setup/install.sh
-sudo poetry install
 ```
 
 #### Docker
