@@ -2,7 +2,8 @@
 
 * [Empire](README.md)
 * [Quickstart](quickstart/README.md)
-  * [Installation](quickstart/installation.md)
+  * [Installation](quickstart/installation/README.md)
+    * [Empire 3 Migration](quickstart/installation/empire-3-migration.md)
   * [Staging](quickstart/staging.md)
   * [Configuration](quickstart/configuration.md)
 * [RESTful API](restful-api/README.md)
@@ -23,7 +24,6 @@
   * [Starkiller](interfaces/starkiller.md)
 * [Plugins](plugins/README.md)
   * [Hooks and Filters](plugins/hooks-and-filters.md)
-* [C\#](csharp.md)
+* [C#](csharp.md)
 * [Module Development](module-development.md)
 * [Release Notes](release-notes.md)
-
