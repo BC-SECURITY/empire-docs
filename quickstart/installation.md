@@ -1,25 +1,5 @@
 # Installation
 
-## Migrating from Empire 3
-
-Empire 4 made some changes to the crypto libraries. Run these commands to refresh your virtual environment,  
-if you already have one.
-
-```text
-poetry run python -m pip uninstall PyCrypto
-poetry run python -m pip uninstall pycryptodome
-poetry install
-```
-
-You will want to run the install script to get the latest OS dependencies. It has been tested and runs properly on Ubuntu 20.04, Debian 10, and Kali Rolling release. When prompted for dotnet, type `y` to get the required dependencies for C\# agents.
-
-```text
-cd setup
-./install.sh
-```
-
-## Installation
-
 We recommend the use of [Kali](https://www.kali.org/downloads/), [Poetry](https://python-poetry.org/docs/), or our [Docker images](https://hub.docker.com/r/bcsecurity/empire) to run Empire. Kali Linux users and [Direct Sponsors](https://github.com/sponsors/BC-SECURITY) will receive 30-day early access to new Empire and Starkiller features.
 
 The following operating systems have been tested for Empire compatibility. We will be unable to provide support for other OSs at this time. Consider using our Prebuilt Docker containers which can run on any system.
