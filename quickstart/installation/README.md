@@ -34,7 +34,7 @@ sudo ./setup/install.sh
 
 #### Docker
 
-If you want to run Empire using a pre-built docker container: **Note**: For size savings on the image, it is not pre-built with the libraries needed for jar, dmg, and nim stagers or the needed libraries for csharp agents and modules. To add these to your image, run the `install.sh` script in the container and answer `y` to the prompts.
+If you want to run Empire using a pre-built docker container: **Note**: For size savings on the image, it is not pre-built with the libraries needed for jar, dmg, and nim stagers. To add these to your image, run the `install.sh` script in the container and answer `y` to the prompts.
 
 ```bash
 # Pull the latest image
@@ -59,15 +59,14 @@ docker run -it -p 1337:1337 -p 5000:5000 --volumes-from data bcsecurity/empire:l
 docker run -it -p 1337:1337 -p 5000:5000 --volumes-from data --entrypoint /bin/bash bcsecurity/empire:latest
 ```
 
-Note: These are example basic commands to get started with docker. Depending on the use case of the individual, one may need to reference the [Docker documentation](https://docs.docker.com/).
+Note: These are example basic commands to get started with docker. Depending on the use case of the individual, one may need to reference the [Docker documentation](https://docs.docker.com).
 
 All image versions can be found at: [https://hub.docker.com/r/bcsecurity/empire/](https://hub.docker.com/r/bcsecurity/empire/)
 
 * The last commit from master will be deployed to the `latest` tag
 * The last commit from the dev branch will be deployed to the `dev` tag
-* All GitHub tagged releases will be deployed using their version numbers \(v3.0.0, v3.1.0, etc\)
+* All GitHub tagged releases will be deployed using their version numbers (v3.0.0, v3.1.0, etc)
 
 ## Community-Supported Operating Systems
 
 At this time, we are choosing to only support Kali, Debian 10, and Ubuntu 20.04 installations, however, we will accept pull requests that fix issues or provide installation scripts specific to other operating systems to this wiki.
-
