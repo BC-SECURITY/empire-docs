@@ -6,7 +6,7 @@ The Empire Client and Empire Server both have a config.yaml file to customize be
 
 The Server configuration is managed via [empire/server/config.yaml](https://github.com/BC-SECURITY/Empire/blob/master/empire/client/config.yaml).
 
-* **suppress-self-cert-warning** - Suppress the http warnings when launching an Empire instance that uses a self-signed cert
+* **suppress-self-cert-warning** - Suppress the http warnings when launching an Empire instance that uses a self-signed cert.
 * **database** - Configure Empire's database. Empire defaults to SQLite and has the ability to run with MySQL.
 
 SQLite - The location of the SQLite db file is configurable.
@@ -78,6 +78,7 @@ The Client configuration is managed via [empire/client/config.yaml](https://gith
   ```
 
 * **suppress-self-cert-warning** - Suppress the HTTP warnings when connecting to an Empire instance that uses a self-signed cert.
+*  **auto-copy-stager** - Automatically copy generated stager text to the clipbaord.
 * **shortcuts** - Shortcuts defined here allow the user to define their own frequently used modules and assign a command to them.
 
 Let's look at 3 distinct examples. All of which can be found in the default [config.yaml](https://github.com/BC-SECURITY/Empire/blob/master/empire/client/config.yaml)
