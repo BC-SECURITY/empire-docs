@@ -19,8 +19,8 @@ MySQL (Beta) - The url, username, and password are all configurable. Everything 
 database:
   type: mysql
   url: localhost
-  username:
-  password:
+  username: 
+  password: 
 ```
 
 The defaults block defines the properties that are initially loaded into the database when it is first created.
@@ -44,19 +44,17 @@ database:
     ip-blacklist: ""
 ```
 
-*   **modules.retain-last-value** - This tells Empire to retain the last values set for a module. In Empire 4.0, the modules objects were converted to be stateless, so when a user executes a module,
-
-    it doesn't impact the values seen or set by another user. Set this to `true` if you want to mimic the old behavior.
+* **modules.retain-last-value** - This tells Empire to retain the last values set for a module. In Empire 4.0, the modules objects were converted to be stateless, so when a user executes a module, it doesn't impact the values seen or set by another user. Set this to `true` if you want to mimic the old behavior.
 * **plugins** - Auto runs plugins with defined settings. This tells Empire to run a set of commands with the plugin at server startup.
 
 ```
 plugins:
-  # Auto-load plugin with defined settings
+  # Auto-execute plugin with defined settings
   csharpserver:
     status: start
 ```
 
-* **directories** - Are customized directories for storing directing Empire to read and write from. The defaults for these directories should not have to be updated unless storing writeable files, separately from the server.
+* **directories** - Control where Empire should read and write specific data.
 
 ```
 directories:

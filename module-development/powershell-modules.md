@@ -41,7 +41,7 @@ script_end: Invoke-Kerberoast {{ PARAMS }} | fl | {{ OUTPUT_FUNCTION }} | %{$_ +
 
 ### **Custom Generate**
 
-**custom\_generate:** For complex modules that require custom code that accesses Empire logic, such as lateral movement modules dynamically generating a listener launcher, a custom "generate" function can be used in a similar way to Empire <= 3. To tell Empire to utilize the custom generate function, set `advanced.custom_generate: true`
+**custom\_generate:** For complex modules that require custom code that accesses Empire logic, such as lateral movement modules dynamically generating a listener launcher, a custom "generate" function can be used. To tell Empire to utilize the custom generate function, set `advanced.custom_generate: true`
 
 ```yaml
 advanced:
@@ -121,7 +121,9 @@ advanced:
     value: ''
 ```
 
-**suggested\_values**: A list of suggested values can be provided for an option. These values will be available in the CLI and Starkiller as autocomplete values. **strict**: If true, the option validator will check that the value chosen matches a value from the suggested values list.
+**suggested\_values**: A list of suggested values can be provided for an option. These values will be available in the CLI and Starkiller as autocomplete values.
+
+**strict**: If true, the option validator will check that the value chosen matches a value from the suggested values list.
 
 **OUTPUT\_FUNCTION**: Some PowerShell modules have an option named `OutputFunction` that converts the output to json, xml, etc. The `OutputFunction` option can be inserted anywher in the `script` and `script_end` by using `{{ OUTPUT_FUNCTION }}`.
 
