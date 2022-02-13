@@ -1,6 +1,53 @@
 # Release Notes
 
 ```
+1/24/2022
+------------
+- Version 4.3.3 Master Release
+        - Added a hook for when an agent is fully checked in (stage2) (@Vinnybod)
+
+1/14/2022
+------------
+- Version 4.3.2 Master Release
+        - Fixed issues with variables names in Mimikatz & Privesc modules (@sbrun)
+        - Fixed issue with Invoke-Obfuscation not being properly called (@Cx01N)
+        - Add dotnet install to dockerfile (@Vinnybod)
+
+1/8/2022
+------------
+- Version 4.3.1 Master Release
+        - Fixed issue with module variables referenced before assignment or undefined (@Vinnybod)
+        - Fixed bug with Invoke-Seatbelt caused by variable name mismatch (@Vinnybod)
+        - Fixed IronPython exit/shutdown issue (@Cx01N)
+        - Fixed ToLower() bug in PowerShell agent when using route (@CyrilleFranchet)
+        - Fixed multiline shell output bug (#491) (@CyrilleFranchet)
+        - Added dir command to the file browser hook (@CyrilleFranchet)
+        - Generate test account with secure rng (@moloch--)
+        - Add Invoke-FodhelperProgIDs module (@m1m1k4tz)
+        - Add Invoke-VeeamGetCreds module (@sadshade)
+
+12/23/2021
+------------
+- Version 4.3.0 Master Release
+        - Updated Invoke-Seatbelt, Invoke-Rubeus, & Invoke-WinPeas (@Cx01N)
+        - Updated C# modules: Seatbelt, SharpSploit (@Cx01N)
+        - Updated profiles to include APT29 (@Cx01N)
+        - Updated Mimikatz to 20210810-2 (@Cx01N)
+        - Updated reset script to remove c# tasks and generated-stagers (@Cx01N)
+        - Added obfuscation options into Empire CLI (@Cx01N)
+        - Added Invoke-BOF module (@Cx01N)
+        - Added C# server plugin to run on startup (@Cx01N)
+        - Added autostart plugin with options to config file (@Cx01N)
+        - Added upload & download options for Empire CLI (@Cx01N)
+        - Added Plugin folders and extensions (@Cx01N)
+        - Added C# redirector (@Cx01N)
+        - Added Invoke-DownloadFile (@Cx01N)
+        - Added error message in client for file downloads >1MB (@Cx01N)
+        - Moved NVNC and Sharpire as C# submodules (@Cx01N)
+        - Fixed Invoke-Assembley (@Cx01N)
+        - Fixed osx/clipboard & pilliageuser modules (@Cx01N)
+        - Removed unused wiki workflows (@Cx01N)
+
 11/1/2021
 ------------
 - Version 4.2.0 Master Release
