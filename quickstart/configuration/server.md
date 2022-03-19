@@ -62,3 +62,12 @@ directories:
   module_source: empire/server/data/module_source/
   obfuscated_module_source: empire/server/data/obfuscated_module_source/
 ```
+
+* **keyword\_obfuscation** - Adds keywords that will be obfuscated in Empire. For example, anytime Invoke-Empire or Invoke-Mimikatz is used in a module/stager, it will be replaced with a random 5 character string.
+
+```
+keyword_obfuscation:
+  # List of keywords to obfuscate
+  - Invoke-Empire
+  - Invoke-Mimikatz
+```
