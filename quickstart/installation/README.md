@@ -54,9 +54,11 @@ Empire still has a few issues installing on Python 3.10. We recommend Python 3.8
     × python setup.py bdist_wheel did not run successfully.
     │ exit code: 1
 ```
-This has been found to occur on Kali when using Python 3.10. Install Python 3.9, switch the poetry env to use it, then rerun the install.
+This has been found to occur when using Python 3.10. Install Python 3.9, switch the poetry env to use it, then rerun the install.
+
 **Solution**
 ```
+# If 3.9 isn't available via apt, install it manually or via pyenv
 apt install python3.9 python3.9-dev
 poetry env use $(which python3.9)
 setup/install.sh
