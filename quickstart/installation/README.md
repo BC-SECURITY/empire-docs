@@ -66,7 +66,9 @@ setup/install.sh
 
 ## Docker
 
-If you want to run Empire using a pre-built docker container: **Note**: For size savings on the image, it is not pre-built with the libraries needed for jar, dmg, and nim stagers. To add these to your image, run the `install.sh` script in the container and answer `y` to the prompts.
+If you want to run Empire using a pre-built docker container.
+
+**Note**: For size savings on the image, it is not pre-built with the libraries needed for jar, dmg, and nim stagers. To add these to your image, run the `install.sh` script in the container and answer `y` to the prompts.
 
 ```bash
 # Pull the latest image
