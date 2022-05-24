@@ -22,10 +22,17 @@ The Client configuration is managed via [empire/client/config.yaml](https://gith
 * **auto-copy-stagers** - Automatically copy generated stager text to the clipboard.
 * **directories** -  Control where Empire should read and write specific data.
 
-```
+```yaml
 directories:
   downloads: empire/client/downloads/
   generated-stagers: empire/client/generated-stagers/
+```
+
+* **tables** -  Enable or disable borders around tables
+
+```yaml
+tables:
+  borders: true
 ```
 
 ### Shortcuts
