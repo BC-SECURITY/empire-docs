@@ -10,7 +10,7 @@ The following operating systems have been tested for Empire compatibility. We wi
 
 As of Empire 4.0, Python 3.8 is the minimum Python version required.
 
-#### Kali
+## Kali
 
 You can install the latest version of Empire by running the following:
 
@@ -20,7 +20,7 @@ sudo apt install powershell-empire
 
 **Note:** Newer versions of Kali require you to run `sudo` before starting Empire.
 
-#### Github
+## Github
 
 Poetry is a dependency and virtual environment management tool. This is highly recommended if using the SocketIO notification feature introduced in 3.5.0. To install Poetry, please follow the installation guide in the documentation or run `sudo pip3 install poetry`.
 
@@ -32,9 +32,43 @@ cd Empire
 sudo ./setup/install.sh
 ```
 
-#### Docker
+### Common Issues
+Empire still has a few issues installing on Python 3.10. We recommend Python 3.8 or Python 3.9.
 
-If you want to run Empire using a pre-built docker container: **Note**: For size savings on the image, it is not pre-built with the libraries needed for jar, dmg, and nim stagers. To add these to your image, run the `install.sh` script in the container and answer `y` to the prompts.
+#### cffi fails to install via pip/poetry
+**Output**
+```
+  • Installing cffi (1.14.5): Failed
+
+  EnvCommandError
+
+  Command ['/root/.cache/pypoetry/virtualenvs/empire-bc-security-fork-QbDnA-QX-py3.10/bin/pip', 'install', '--no-deps', '/root/.cache/pypoetry/artifacts/d0/e3/60/58172107607ad40fd710df22e324a3ee48174e11f9e228acdaa720f6d1/cffi-1.14.5.tar.gz'] errored with the following return code 1, and output:
+  Processing /root/.cache/pypoetry/artifacts/d0/e3/60/58172107607ad40fd710df22e324a3ee48174e11f9e228acdaa720f6d1/cffi-1.14.5.tar.gz
+    Preparing metadata (setup.py): started
+    Preparing metadata (setup.py): finished with status 'done'
+  Building wheels for collected packages: cffi
+    Building wheel for cffi (setup.py): started
+    Building wheel for cffi (setup.py): finished with status 'error'
+    error: subprocess-exited-with-error
+
+    × python setup.py bdist_wheel did not run successfully.
+    │ exit code: 1
+```
+This has been found to occur when using Python 3.10. Install Python 3.9, switch the poetry env to use it, then rerun the install.
+
+**Solution**
+```
+# If 3.9 isn't available via apt, install it manually or via pyenv
+apt install python3.9 python3.9-dev
+poetry env use $(which python3.9)
+setup/install.sh
+```
+
+## Docker
+
+If you want to run Empire using a pre-built docker container.
+
+**Note**: For size savings on the image, it is not pre-built with the libraries needed for jar, dmg, and nim stagers. To add these to your image, run the `install.sh` script in the container and answer `y` to the prompts.
 
 ```bash
 # Pull the latest image
