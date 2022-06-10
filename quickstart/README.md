@@ -24,6 +24,14 @@ Empire 4 introduces a new server and client architecture which requires running 
 ./ps-empire client -h
 ```
 
+Both the client and server  can be reset by passing a `--reset` flag. This will delete the database and any files that were created at runtime. It is recommended to run a `--reset` after any upgrades.\
+
+
+```
+./ps-empire client --reset
+./ps-empire server --reset
+```
+
 ## Main Menu
 
 Once you hit the main menu, you'll see the number of active agents, listeners, and loaded modules.

@@ -34,6 +34,7 @@
     * [Credential Menu](interfaces/client/credential-menu.md)
     * [Use Module Menu](interfaces/client/use-module-menu.md)
     * [Chat Menu](interfaces/client/chat-menu.md)
+    * [Resource Files](interfaces/client/resource-files.md)
   * [Starkiller](interfaces/starkiller/README.md)
     * [Introduction](interfaces/starkiller/introduction.md)
 * [Plugins](plugins/README.md)
