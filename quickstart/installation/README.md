@@ -33,10 +33,13 @@ sudo ./setup/install.sh
 ```
 
 ### Common Issues
+
 Empire still has a few issues installing on Python 3.10. We recommend Python 3.8 or Python 3.9.
 
 #### cffi fails to install via pip/poetry
+
 **Output**
+
 ```
   • Installing cffi (1.14.5): Failed
 
@@ -54,14 +57,33 @@ Empire still has a few issues installing on Python 3.10. We recommend Python 3.8
     × python setup.py bdist_wheel did not run successfully.
     │ exit code: 1
 ```
+
 This has been found to occur when using Python 3.10. Install Python 3.9, switch the poetry env to use it, then rerun the install.
 
 **Solution**
+
 ```
 # If 3.9 isn't available via apt, install it manually or via pyenv
 apt install python3.9 python3.9-dev
 poetry env use $(which python3.9)
 setup/install.sh
+```
+
+#### ModuleNotFoundError: No module named '\_tkinter'&#x20;
+
+In Empire 4.7.0 this has been updated to be non-fatal. The error will show up as `[!] Failed to load tkinter. Please install tkinter to use the file prompts.`\
+\
+[tkinter](https://docs.python.org/3/library/tkinter.html) is a GUI tool built into python itself. It is possible for some distributions of Python to exclude it.
+
+tkinter is only used in the Empire client when using the `-p` option to prompt a file selection on certain commands. For this reason, its not a critical dependency. In Empire 4.7, we made the inclusion of `tkinter` optional.
+
+**Solution**
+
+There is no single way to fix this problem, because it depends on how your Python was installed. It has been reported that a variation of the following apt commands will add tkinter to the right place. The command you use would depend on how your python version was installed to begin with. For example, if your Python lives in `/usr/local/lib/python3.8/`, you’d want to use `apt install python3.8-tk`.
+
+```
+apt install python3-tk
+apt install python3.8-tk
 ```
 
 ## Docker
