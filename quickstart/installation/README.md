@@ -18,11 +18,9 @@ You can install the latest version of Empire by running the following:
 sudo apt install powershell-empire
 ```
 
-**Note:** Newer versions of Kali require you to run `sudo` before starting Empire.
+**Note:** Kali requires you to run Empire with `sudo`.
 
 ## Github
-
-Poetry is a dependency and virtual environment management tool. This is highly recommended if using the SocketIO notification feature introduced in 3.5.0. To install Poetry, please follow the installation guide in the documentation or run `sudo pip3 install poetry`.
 
 To install and run:
 

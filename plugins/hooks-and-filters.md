@@ -2,10 +2,6 @@
 
 ## Hooks and Filters
 
-### Empire 4.1 introduces a beta feature called hooks and filters.
-
-_Since this is a beta feature, the api is subject to change at any point, until it is not beta._
-
 Hooks and filters are a function that a developer can implement that will be called when some event happens.
 
 **Hooks** - Hooks are implemented to perform some side effect of an event happening. A hook does not need to return anything.
@@ -17,7 +13,7 @@ A minimal hook implementation.
 ```python
 from empire.server.common.hooks import hooks
 
-def my_hook(agent: models.Agent):
+def my_hook(db: Session, agent: models.Agent):
     """
     print to the console whenever an agent checks in.
     """
@@ -32,7 +28,7 @@ A minimal filter implementation.
 ```python
 from empire.server.common.hooks import hooks
 
-def my_filter(tasking: models.Tasking):
+def my_filter(db: Session, tasking: models.Tasking):
     """
     Reverses the output string of a tasking.
     """
@@ -46,25 +42,25 @@ hooks.register_filter(hooks.BEFORE_TASKING_RESULT_FILTER, 'reverse_filter', my_f
 
 Each event has its own set of unique arguments. At the moment, the events are:
 
+* AFTER_LISTENER_CREATED_HOOK
+
+This event is triggered after the creation of a listener. Its arguments are (db: Session, listener: models.Listener).
+
 * AFTER\_TASKING\_HOOK
 
-This event is triggered after the tasking is queued and written to the database. Its arguments are (tasking: models.Tasking)
+This event is triggered after the tasking is queued and written to the database. Its arguments are (db: Session, tasking: models.Tasking)
 
 * BEFORE\_TASKING\_RESULT\_HOOK/BEFORE\_TASKING\_RESULT\_FILTER
 
-This event is triggered after the tasking results are received but before they are written to the database. Its arguments are (tasking: models.Tasking) where tasking is the db record.
+This event is triggered after the tasking results are received but before they are written to the database. Its arguments are (db: Session, tasking: models.Tasking) where tasking is the db record.
 
 * AFTER\_TASKING\_RESULT\_HOOK
 
-This event is triggered after the tasking results are received and after they are written to the database. Its arguments are (tasking: models.Tasking) where tasking is the db record.
+This event is triggered after the tasking results are received and after they are written to the database. Its arguments are (db: Session, tasking: models.Tasking) where tasking is the db record.
 
 * AFTER\_AGENT\_CHECKIN\_HOOK
 
-This event is triggered after the agent has checked in and a record written to the database. It has one argument (agent: models.Agent)
-
-* AFTER\_AGENT\_STAGE2\_HOOK
-
-This event is triggered after the agent has completed the stage2 of the checkin process, and the sysinfo has been written to the database. It has one argument (agent: models.Agent)
+ This event is triggered after the agent has completed the stage2 of the checkin process, and the sysinfo has been written to the database. Its arguments are (db: Session, agent: models.Agent)
 
 _The number of events at the moment is very minimal. If there's an event that you would like added, open an issue on the GitHub repo, come chat in our Discord, or put up a pull request._
 
@@ -79,5 +75,4 @@ Empire utilizes both filters and hooks itself that can be used as a reference.
 Future enhancements:
 
 *   Since hooking the agent results events will invoke hooks on every single tasking result,
-
     we'd like to implement something that is more module specific. For example, a module that needs to store credentials, such as Mimikatz, could have a `on_response` function in its `.py` file that is invoked specifically when that module returns.

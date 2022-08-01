@@ -1,6 +1,6 @@
 # Plugins
 
-Plugins are an extension of Empire that allow for custom scripts to be loaded. This allows anyone to easily build or add community projects to extend Empire functionality. Plugins can be accessed from the Empire CLI or the API as long as the plugin follows the [template example](https://github.com/BC-SECURITY/Empire/blob/master/empire/server/plugins/example.py). A list of Empire Plugins is located here.
+Plugins are an extension of Empire that allow for custom scripts to be loaded. This allows anyone to easily build or add community projects to extend Empire functionality. Plugins can be accessed from the Empire client or the API as long as the plugin follows the [template example](https://github.com/BC-SECURITY/Empire/blob/master/empire/server/plugins/example.py). A list of Empire Plugins is located here.
 
 ## Empire Plugins
 

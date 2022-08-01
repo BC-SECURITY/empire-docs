@@ -62,7 +62,7 @@ shortcuts:
           value: 1
 ```
 
-This third one gets a bit more complex. Instead of providing a `value` to the parameter, it is marked as `dynamic`. This tells the CLI that it expects the user to send the parameters as part of their command. In other words, the user needs to type `bypassuac http1` in order for this to execute. The parameters are passed in the order they are defined in config.yaml. There are some convenient autocompletes if the field is named `Listener` or `Agent`.
+This third one gets a bit more complex. Instead of providing a `value` to the parameter, it is marked as `dynamic`. This tells the client that it expects the user to send the parameters as part of their command. In other words, the user needs to type `bypassuac http1` in order for this to execute. The parameters are passed in the order they are defined in config.yaml. There are some convenient autocompletes if the field is named `Listener` or `Agent`.
 
 ```yaml
 shortcuts:

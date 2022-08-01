@@ -2,7 +2,7 @@
 
 ## Run Commands
 
-Empire 4 introduces a new server and client architecture which requires running each in separate terminals.
+Empire uses a server/client architecture which requires running each in separate terminals.
 
 ### Server
 
