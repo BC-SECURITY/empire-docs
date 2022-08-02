@@ -8,8 +8,9 @@ The docs here are to be used as a reference for the API and to explain nuances f
 
 The server can be launched by running `./ps-empire server` and can be connected to with the built-in client or [Starkiller](https://github.com/BC-SECURITY/Starkiller). By default, the RESTful API is started on port 1337, over HTTP without a certificate. This is because self-signed certs are blocked by most web browsers and Starkiller is used via a web browser.
 
-<!-- TODO VR Add config option for cert? Should be easy enough -->
-<!-- using the certificate located at .empire/server/data/empire.pem, which can be generated with ./setup/cert.sh or the default install script. The port can be changed by supplying `--restport <PORT_NUM>` on launch. -->
+If launched with `--secure-api`, https will be used using the certificate located at `empire/server/data/empire.pem`, which is generated at startup.
+
+The port can be changed by supplying `--restport <PORT_NUM>` on launch.
 
 ## API Authentication
 API Authentication is handled via JSON Web Tokens (JWT).
