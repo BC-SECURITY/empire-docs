@@ -21,6 +21,7 @@ The Client configuration is managed via [empire/client/config.yaml](https://gith
 * **suppress-self-cert-warning** - Suppress the HTTP warnings when connecting to an Empire instance that uses a self-signed cert.
 * **auto-copy-stagers** - Automatically copy generated stager text to the clipboard.
 * **directories** -  Control where Empire should read and write specific data.
+* **mouse-support** -  Enable/disable mouse functionality for the client.
 
 ```yaml
 directories:
