@@ -3,24 +3,27 @@
 The Server configuration is managed via [empire/server/config.yaml](https://github.com/BC-SECURITY/Empire/blob/master/empire/client/config.yaml).
 
 * **suppress-self-cert-warning** - Suppress the http warnings when launching an Empire instance that uses a self-signed cert.
-* **database** - Configure Empire's database. Empire defaults to SQLite and has the ability to run with MySQL.
+* **database** - Configure Empire's database. Empire defaults to SQLite and has the ability to run with MySQL. For more info on the database, see the [Database](database/README.md) section.
 
 SQLite - The location of the SQLite db file is configurable.
 
 ```yaml
 database:
-  type: sqlite
-  location: empire/server/data/empire.db
+  use: sqlite
+  sqlite:
+    location: empire/server/data/empire.db
 ```
 
-MySQL (Beta) - The url, username, and password are all configurable. Everything in Empire should be working with MySQL with the exception of Python agents. There is additional work needed in order to support them.
+MySQL - The url, username, password, and database name are all configurable.
 
 ```yaml
 database:
-  type: mysql
-  url: localhost
-  username: 
-  password: 
+  use: mysql
+  mysql:
+    url: localhost
+    username: 
+    password: 
+    database_name:
 ```
 
 The defaults block defines the properties that are initially loaded into the database when it is first created.
