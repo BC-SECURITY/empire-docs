@@ -1,7 +1,7 @@
 Logging
 ----
 
-The logging for the server is logged to the file `empire/server/downloads/logs/empire_server.log` and to the console. By default, the logging level is set to `INFO`.
+The logging for the server is logged to the file `empire/server/downloads/logs/empire_server.log` and to the console. By default, the logging level is set to `INFO`. The client has its own logging to the file `empire/client/downloads/logs/empire_server.log` and by default is set to `INFO`.
 
 
 ## Listener Logging
