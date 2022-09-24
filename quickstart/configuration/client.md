@@ -36,6 +36,14 @@ tables:
   borders: true
 ```
 
+* **logging** -  See Logging for more information on logging configuration.
+
+```yaml
+logging:
+  level: INFO
+  directory: empire/client/downloads/logs/
+```
+
 ### Shortcuts
 
 * **shortcuts** - Shortcuts defined here allow the user to define their own frequently used modules and assign a command to them.
