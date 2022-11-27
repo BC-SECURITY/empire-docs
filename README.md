@@ -1,8 +1,10 @@
 # Empire
 
-![Empire](https://user-images.githubusercontent.com/20302208/70022749-1ad2b080-154a-11ea-9d8c-1b42632fd9f9.jpg)
+![](https://user-images.githubusercontent.com/20302208/70022749-1ad2b080-154a-11ea-9d8c-1b42632fd9f9.jpg)
 
-[![Docs](https://img.shields.io/badge/Wiki-Docs-green?style=plastic\&logo=wikipedia)](https://bc-security.gitbook.io/empire-wiki/) [![Twitter URL](https://img.shields.io/twitter/follow/BCSecurity1?style=plastic\&logo=twitter)](https://twitter.com/BCSecurity1) [![YouTube URL](https://img.shields.io/youtube/channel/views/UCIV4xSntF1h1bvFt8SUfzZg?style=plastic\&logo=youtube)](https://www.youtube.com/channel/UCIV4xSntF1h1bvFt8SUfzZg) [![Discord](https://img.shields.io/discord/716165691383873536?style=plastic\&logo=discord)](https://discord.gg/P8PZPyf) [![Donate](https://img.shields.io/badge/Donate-Sponsor-blue?style=plastic\&logo=github)](https://github.com/sponsors/BC-SECURITY) [![Blog](https://img.shields.io/badge/Blog-Read%20me-orange?style=plastic\&logo=wordpress)](https://www.bc-security.org/blog)
+&#x20;                                          [![Docs](https://img.shields.io/badge/Wiki-Docs-green?style=plastic\&logo=wikipedia)](https://bc-security.gitbook.io/empire-wiki/) [![Twitter URL](https://img.shields.io/twitter/follow/BCSecurity1?style=plastic\&logo=twitter)](https://twitter.com/BCSecurity1) [![YouTube URL](https://img.shields.io/youtube/channel/views/UCIV4xSntF1h1bvFt8SUfzZg?style=plastic\&logo=youtube)](https://www.youtube.com/channel/UCIV4xSntF1h1bvFt8SUfzZg)
+
+&#x20;                                          [![Discord](https://img.shields.io/discord/716165691383873536?style=plastic\&logo=discord)](https://discord.gg/P8PZPyf) [![Donate](https://img.shields.io/badge/Donate-Sponsor-blue?style=plastic\&logo=github)](https://github.com/sponsors/BC-SECURITY) [![Blog](https://img.shields.io/badge/Blog-Read%20me-orange?style=plastic\&logo=wordpress)](https://www.bc-security.org/blog)
 
 Empire is a post-exploitation and adversary emulation framework that is used to aid Red Teams and Penetration Testers. The Empire server is written in Python 3 and is modular to allow operator flexibility. Empire comes built-in with a client that can be used remotely to access the server. There is also a GUI available for remotely accessing the Empire server, [Starkiller](https://github.com/BC-SECURITY/Starkiller).
 
