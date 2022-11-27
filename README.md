@@ -51,4 +51,4 @@ Empire is a post-exploitation and adversary emulation framework that is used to 
 
 This documentation was organized and built by the PowerShell Empire development team. It is neither complete nor perfect, so any suggestions, corrections, or additions from the community would be greatly appreciated. Please submit any changes as a pull request to the [empire-docs repository](https://github.com/BC-SECURITY/empire-docs).
 
-Contact us by email at Empire@BC-Security.org
+{% @mailchimp/mailchimpSubscribe %}
