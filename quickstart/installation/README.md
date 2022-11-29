@@ -22,13 +22,21 @@ sudo apt install powershell-empire
 
 ## Github
 
-Poetry is a dependency and virtual environment management tool. This is highly recommended if using the SocketIO notification feature introduced in 3.5.0. To install Poetry, please follow the installation guide in the documentation or run `sudo pip3 install poetry`.
-
-To install and run:
+Note: The `main` branch is a reflection of the latest changes and may not always be stable. After cloning the repo, you can checkout the latest stable release by running the `setup/checkout-latest-tag.sh` script.&#x20;
 
 ```bash
 git clone --recursive https://github.com/BC-SECURITY/Empire.git
 cd Empire
+./setup/checkout-latest-tag.sh
+sudo ./setup/install.sh
+```
+
+**Sponsors:**
+
+```
+git clone --recursive https://github.com/BC-SECURITY/Empire-Sponsors.git
+cd Empire-Sponsors
+./setup/checkout-latest-tag.sh sponsors
 sudo ./setup/install.sh
 ```
 
