@@ -105,7 +105,7 @@ Downloads are linked to the following sources (and can be expanded in the future
 * Agent tasks
 
 A user can also upload a file to the server via the `POST` endpoint. That file can then
-be referenced to be used in certain modules. (TODO this is only somewhat implemented via 4.x).
+be referenced to be used in certain modules.
 
 ### Credentials
 */api/v2beta/credentials*
