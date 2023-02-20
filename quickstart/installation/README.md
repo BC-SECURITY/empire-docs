@@ -22,11 +22,21 @@ sudo apt install powershell-empire
 
 ## Github
 
-To install and run:
+Note: The `main` branch is a reflection of the latest changes and may not always be stable. After cloning the repo, you can checkout the latest stable release by running the `setup/checkout-latest-tag.sh` script.
 
 ```bash
 git clone --recursive https://github.com/BC-SECURITY/Empire.git
 cd Empire
+./setup/checkout-latest-tag.sh
+sudo ./setup/install.sh
+```
+
+**Sponsors:**
+
+```
+git clone --recursive https://github.com/BC-SECURITY/Empire-Sponsors.git
+cd Empire-Sponsors
+./setup/checkout-latest-tag.sh sponsors
 sudo ./setup/install.sh
 ```
 

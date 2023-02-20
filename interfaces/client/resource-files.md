@@ -6,6 +6,5 @@ To execute a resource file, supply it as a command line parameter. For example `
 
 On startup, the client will execute the lines from the resource file in the order they appear.
 
-### Future Work
+Beginning in Empire 4.7.0, resource files can be executed from the client while it is already running by using the `resource` command.
 
-Add a `resource` command that can execute resource files when the application is already started.
