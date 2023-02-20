@@ -10,16 +10,6 @@ The following operating systems have been tested for Empire compatibility. We wi
 
 As of Empire 4.0, Python 3.8 is the minimum Python version required.
 
-## Kali
-
-You can install the latest version of Empire by running the following:
-
-```bash
-sudo apt install powershell-empire
-```
-
-**Note:** Kali requires you to run Empire with `sudo`.
-
 ## Github
 
 Note: The `main` branch is a reflection of the latest changes and may not always be stable. After cloning the repo, you can checkout the latest stable release by running the `setup/checkout-latest-tag.sh` script.
@@ -39,6 +29,16 @@ cd Empire-Sponsors
 ./setup/checkout-latest-tag.sh sponsors
 sudo ./setup/install.sh
 ```
+
+## Kali
+
+You can install the latest version of Empire by running the following:
+
+```bash
+sudo apt install powershell-empire
+```
+
+**Note:** Kali requires you to run Empire with `sudo`.
 
 ## Docker
 
