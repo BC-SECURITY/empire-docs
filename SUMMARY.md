@@ -21,6 +21,7 @@
   * [Dropbox](listeners/dropbox.md)
   * [OneDrive](listeners/onedrive.md)
   * [Malleable C2](listeners/malleable-c2.md)
+* [Logging](logging/logging.md)
 * [Interfaces](interfaces/README.md)
   * [Client](interfaces/client/README.md)
     * [Admin Menu](interfaces/client/admin-menu.md)
