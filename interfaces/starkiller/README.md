@@ -1,78 +1,57 @@
 # Starkiller
+Starkiller is a Frontend for [Powershell Empire](https://github.com/BC-SECURITY/Empire/). It is a web application written in VueJS. If you'd like to contribute please follow the [Contribution guide](/CONTRIBUTING.md). If you'd like to request a feature or report a bug, please follow the [Issue template](/.github/ISSUE_TEMPLATE.md).
 
-![](https://github.com/BC-SECURITY/Starkiller/raw/master/src/assets/icon.png)
+# Getting Started
+As of Empire 5.0 and Starkiller 2.0, you no longer need to install Starkiller or build it from source.
+It is prepackaged in Empire as a submodule and served via Empire's API.
 
-## Starkiller
+# Sponsorship and extra features
+[Sponsoring](https://github.com/sponsors/BC-SECURITY/) at the `Individual` level will give access to extra features.
+At the moment, the extra Starkiller sponsorship features include:
 
-Starkiller is a Frontend for [Powershell Empire](https://github.com/BC-SECURITY/Empire/). It is an Electron application written in VueJS. If you'd like to contribute please follow the [Contribution guide](https://github.com/BC-SECURITY/Empire/blob/master/.github/CONTRIBUTING.md). If you'd like to request a feature or report a bug, please follow the [Issue template](https://github.com/BC-SECURITY/Empire/blob/master/.github/ISSUE_TEMPLATE.md).
+  ## Interactive agent shell
+  <div align="left"><img width="800" src="https://user-images.githubusercontent.com/9831420/104983879-e37fc700-59ca-11eb-9c90-bd2d166c4ac5.gif"></div>
+  
+  ## Enable/Disable modules
+  <div align="left"><img width="800" src="https://user-images.githubusercontent.com/9831420/123528242-e7f78c80-d69a-11eb-9e88-3410c151cd20.gif"></div>
+  
+  ## Process Browser
+  <div align="left"><img width="800" src="https://user-images.githubusercontent.com/9831420/131264080-0264558d-59c4-44d9-8dae-7b518c47a9cb.gif"></div>
 
-## Getting Started
+  ## Proxy Management
+  <div align="left"><img width="800" src="https://user-images.githubusercontent.com/9831420/210124448-4f1107b0-3250-4faa-8ea9-4daec77e277e.gif"></div>
 
-* To run Starkiller, you can download the installers for Mac, Linux, and Windows on the [Releases](https://github.com/BC-SECURITY/Starkiller/releases) page.
-  * For Mac and Windows - run the installer how you would any other .exe or .dmg
-  * For Linux - Change the permissions `chmod a+x starkiller-<version>.AppImage`, then execute `./starkiller-<version>.AppImage --no-sandbox`
-* Starkiller is also available via `apt install starkiller` on [Kali](https://www.kali.org/). Kali releases are 30 days ahead of the public release.
-* If you want to build from source or run in development mode, instructions are below.
+  ## Graph View
+  <div align="left"><img width="800" src="https://user-images.githubusercontent.com/9831420/216792129-5b0fed82-b209-48cb-9a43-eeb3e69c7229.gif"></div>
 
-### Build and run from source
+There is also a collection of Empire plugins available via sponsorship.
 
+Thanks to our sponsors the following features which started as sponsor features have been moved to the public and kali builds.
+- File browser
+- Popout windows
+- Chat widget
+- Bypass management
+- Malleable profile management
+
+## Build and run from source
 Prerequisites:
-
-* [Node.js](http://nodejs.org/) 10+.
+* [Node.js](http://nodejs.org/) 16+.
 * [Yarn](https://classic.yarnpkg.com/en/docs/install)
-
-  Currently it has been tested using Yarn 1.22.0.
-
-  ```text
-  yarn install
-  ```
-
-#### Compile and hot-reload for development
-
-```text
-yarn electron:serve
+Currently it has been tested using Yarn 1.22.
+```
+yarn
 ```
 
-#### Compile and minify for production
-
-```text
-yarn electron:build
-
-# Or to target a specific OS.
-yarn electron:build:lin
-yarn electron:build:win
-yarn electron:build:mac
+### Compile and hot-reload for development
+```
+yarn dev
 ```
 
-Starkiller's build tool, [electron-builder](https://www.electron.build), is not meant to target multiple platforms in a single build. It is also recommended to compile on your target platform. For example, to build for amd64 \(on an amd64 machine\) with an AppImage, the command would be:
-
-```text
-yarn electron:build --arm64 --linux AppImage
+### Compile and minify for production
+```
+yarn build
 ```
 
-**Note:** To regenerate the icons
+## Changelog
 
-```text
-npm install -g electron-icon-builder
-yarn electron:generate-icons
-```
-
-### Compatability Table
-
-Starkiller’s new features occasionally depend on new functionality within Empire. Therefore, it is recommended that you follow this release table for syncing up your Starkiller and Empire versions. If you are using an older version of Empire, Starkiller will warn you when logging in, but will allow you to continue. If there is a new minimum version of Empire required to get all the features out of Starkiller, we will do a minor version bump to Starkiller.
-
-| Starkiller Release | Minimum Empire Version | Notes |
-| :--- | :--- | :--- |
-| 1.0.x | 3.1.1 | 3.1.1 is the first version of Empire to include all the user endpoints necessary for Starkiller to function |
-| 1.1.x | 3.1.5 | 3.1.5 updated the reporting endpoint to have the same result as running it in the CLI. Starkiller 1.1.x uses that reporting endpoint for the reporting tab |
-| 1.2.x | 3.2.0 | 3.2.0 added an endpoint for users that is needed for the UI updates introduced in Starkiller 1.2.0 |
-| 1.3.x | 3.3.0 | 3.3.0 categorized all of the modules in Empire with corresponding [MITRE techniques](https://attack.mitre.org/techniques/enterprise/) |
-| 1.4.x | 3.5.0 | 3.5.0 added real-time notifications for new listeners and agents |
-| 1.5.x | 3.6.2 | 3.6.2 added the chat server |
-| 1.6.x, 1.7.x | 3.7.0 | 1.6.0 was tested against Empire 3.7.0. There _shouldn't_ be any breaking changes, but there were a lot of code changes. |
-| 1.8.x | 4.0.0 |  |
-
-### Changelog
-
-Detailed changes for each release are documented in the [release notes](https://github.com/bc-security/starkiller/releases).
-
+Detailed changes for each release are documented in the [changelog](./CHANGELOG.md).
