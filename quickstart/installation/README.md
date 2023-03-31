@@ -5,8 +5,9 @@ We recommend the use of [Kali](https://www.kali.org/downloads/), [Poetry](https:
 The following operating systems have been tested for Empire compatibility. We will be unable to provide support for other OSs at this time. Consider using our Prebuilt Docker containers which can run on any system.
 
 * Kali Linux Rolling
-* Ubuntu 20.04
-* Debian 10
+* Ubuntu 20.04 / 22.04
+* Debian 10 / 11
+* ParrotOS
 
 As of Empire 4.0, Python 3.8 is the minimum Python version required.
 
