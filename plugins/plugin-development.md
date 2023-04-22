@@ -1,5 +1,26 @@
 # Plugin Development
 
+
+## Execute Function
+The execute function is the entry point for the plugin. It is called when the plugin is executed via the CLI or the API. The execute function is passed the following arguments:
+
+* command - A dict of the command arguments, already parsed and validated by the core Empire code
+* kwargs - Additional arguments that may be passed in by the core Empire code. Right now there are only two.
+  * user - The user database object for the user that is executing the plugin
+  * db - The database session object
+
+If the plugin doesn't have `**kwargs`, then no kwargs will be sent. This is to ensure backwards compatibility with plugin pre-5.2.
+
+
+```python
+def execute(self, command, **kwargs):
+    user = kwargs.get('user', None)
+    db = kwargs.get('db', None)
+
+    return "Execution complete"
+```
+
+
 ## Using the database
 If objects are being retrieved from the database, the service functions require a database session be passed in.
 Effectively, this means that you must handle your database session in the plugin. Using the Context Manager syntax
@@ -8,10 +29,45 @@ ensures the db session gets cleaned up when done.
 ```python
 from empire.server.core.db.base import SessionLocal
 
-with SessionLocal() as db:
-  agents = self.main_menu.agentsv2.get_all(db)
-  ...
+def execute(self, command, **kwargs):
+    user = kwargs.get('user', None)
+    db = kwargs.get('db', None)
+
+    agents = self.main_menu.agentsv2.get_all(db)
+
+    return "Execution complete"
 ```
+
+## Plugin Tasks
+Plugins can now store tasks. The data model looks pretty close to Agent tasks. This is for agent executions that:
+
+1. Want to attach a file result
+2. Need to display a lot of output, where notifications don't quite work
+3. Has output you'll want to look back at later
+
+```python
+from empire.server.core.db import models
+
+def execute(self, command, **kwargs):
+    user = kwargs.get('user', None)
+    db = kwargs.get('db', None)
+
+    input = 'Example plugin execution.'
+
+    plugin_task = models.PluginTask(
+      plugin_id=self.info["Name"],
+      input=input,
+      input_full=input,
+      user_id=user.id,
+      status=models.PluginTaskStatus.completed,
+    )
+
+    db.add(plugin_task)
+    db.commit()
+```
+
+
+For an example of using plugin tasks and attaching files, see the [basic_reporting plugin](https://github.com/BC-SECURITY/Empire/blob/main/server/plugins/basic_reporting/basic_reporting.plugin).
 
 ## Event-based functionality (hooks and filters)
 This is outlined in [Hooks and Filters](./hooks-and-filters.md).
@@ -39,7 +95,5 @@ This is no different than the way things were pre 5.0.
 ## Future Work
 * improved plugin logging -
   Give plugins indidual log files like listeners have. Make those logs accessible via Starkiller.
-* plugin tasks -
-  Have plugin tasks where a user might want to come back to see the output at a later time. For this we could have tasks that work in a similar way to agent tasks.
 * endpoint for installing plugins -
   A user would be able to provide the URL to a git repository and Empire would download and install the plugin.
