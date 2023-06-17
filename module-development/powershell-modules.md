@@ -1,3 +1,5 @@
+## TODO: Update instructions for git credential for starkiller sync
+
 # PowerShell Modules
 
 The [powershell\_template.yaml](https://github.com/BC-SECURITY/Empire/blob/master/empire/server/modules/powershell\_template.py) will help guide through the fields needed for writing a simple module. Of course, not every module will fit the simplest case. There are advanced options that we will discuss below.
@@ -124,6 +126,17 @@ advanced:
 **suggested\_values**: A list of suggested values can be provided for an option. These values will be available in the CLI and Starkiller as autocomplete values.
 
 **strict**: If true, the option validator will check that the value chosen matches a value from the suggested values list.
+
+**type**: If a type is defined, the API will automatically validate the option value against the type. The following types are supported:
+* bool
+* int
+* float
+* str
+* file
+
+A 'file' option type should be an integer that corresponds to the `download` id of a file already on the empire server. The API will automatically validate that the file exists. If a `custom_generate` function is used, the whole database object for the file will be passed to the function.
+
+Note: Starkiller will automatically give file options with a dropdown or upload. File options have not yet been implemented in the client. It is recommended to use Starkiller.
 
 **OUTPUT\_FUNCTION**: Some PowerShell modules have an option named `OutputFunction` that converts the output to json, xml, etc. The `OutputFunction` option can be inserted anywher in the `script` and `script_end` by using `{{ OUTPUT_FUNCTION }}`.
 
