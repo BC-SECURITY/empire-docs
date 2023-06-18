@@ -1,5 +1,3 @@
-## TODO: Update instructions for git credential for starkiller sync
-
 # PowerShell Modules
 
 The [powershell\_template.yaml](https://github.com/BC-SECURITY/Empire/blob/master/empire/server/modules/powershell\_template.py) will help guide through the fields needed for writing a simple module. Of course, not every module will fit the simplest case. There are advanced options that we will discuss below.
