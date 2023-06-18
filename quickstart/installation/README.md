@@ -31,6 +31,9 @@ cd Empire-Sponsors
 sudo ./setup/install.sh
 ```
 
+If you are using the sponsors version of Empire, it will pull the sponsors version of Starkiller.
+Because these are private repositories, you need to have ssh credentials configured for GitHub. Instructions can be found [here](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh).
+
 ## Kali
 
 You can install the latest version of Empire by running the following:
